@@ -46,10 +46,7 @@ namespace FirstWebApp
             {
                 Response.Write("[1] 폼이 처음 로드될때 실행<br />");
             }
-            if (Page.IsPostBack == false)
-            {
-                Response.Write("[2] 폼이 처음 로드될때 실행<br />");
-            }
+            else Response.Write("[2] 포스트백 됐을때 실행<br /> ");
 
             Response.Write("[3] 폼이 로드될때마다 실행 <br />");
         }

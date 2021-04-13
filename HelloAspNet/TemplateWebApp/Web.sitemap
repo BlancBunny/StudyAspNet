@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="FrmNavigationControl.aspx" title="홈(Home)"  description="처음으로">
+    <siteMapNode url="FrmSiteMapPath.aspx" title="사이트맵패스 컨트롤"  description="사이트맵패스 컨트롤" />
+    <siteMapNode url="Introduce.aspx" title="사이트 소개(Introduce)"  description="사이트 소개(Introduce)" />
+    <siteMapNode url="Lecture.aspx" title="강의실(Lecture)"  description="강의실(Lecture)" >
+      <siteMapNode url="Week.aspx" title=""  description="사이트 소개(Introduce)" />
+      <siteMapNode url="Introduce.aspx" title="사이트 소개(Introduce)"  description="사이트 소개(Introduce)" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>
