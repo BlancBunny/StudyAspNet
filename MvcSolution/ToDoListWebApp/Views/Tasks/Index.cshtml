@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ToDoListWebApp.Models.Task>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>할 일 리스트</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-info">새로 만들기</a>
+</p>
+<table class="table table-bordered table-striped table-hover table-condensed">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                제목
+            </th>
+            <th>
+                완료
+            </th>
+            <th>
+                생성일
+            </th>
+            <th>
+                수정
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>@item.Id</td>
+            <td>
+                @if (@item.IsDone == true)
+                {
+                    <s>@item.Title</s>
+                }
+                else 
+                {
+                    <text>@item.Title</text>
+                } 
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.IsDone)*@
+
+                @Html.DisplayFor(modelItem => item.IsDone)
+                
+                
+               
+            </td>
+            <td>
+                @item.CreationTime.ToShortDateString()
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">수정</a> |
+                <a asp-action="Done" asp-route-id="@item.Id">완료</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

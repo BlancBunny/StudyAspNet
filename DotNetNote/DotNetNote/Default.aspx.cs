@@ -1,7 +1,10 @@
-﻿using Helper;
+﻿using DotNetNote.Models;
+using Helper;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -12,7 +15,7 @@ namespace DotNetNote
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Write(StringLibrary.CutString("길어지면 잘립니다", 10));
+            Response.Redirect("~/Board/BoardList.aspx");
         }
     }
 }

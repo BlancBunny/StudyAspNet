@@ -44,13 +44,31 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="netstandard">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.78\lib\net461\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.7.9\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.Web.4.12.0\lib\net35\NLog.Web.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -106,12 +124,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Board\BoardDelete.aspx" />
+    <Content Include="Board\BoardDown.aspx" />
+    <Content Include="Board\BoardList.aspx" />
+    <Content Include="Board\BoardView.aspx" />
+    <Content Include="Board\BoardWrite.aspx" />
+    <Content Include="Board\ImageText.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Controls\PagingControl.ascx" />
+    <Content Include="Controls\SearchControl.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -124,6 +150,127 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="images\dnn\blank.gif" />
+    <Content Include="images\dnn\commentcount.gif" />
+    <Content Include="images\dnn\icon_delete_red.gif" />
+    <Content Include="images\dnn\img.jpg" />
+    <Content Include="images\dnn\key_login.gif" />
+    <Content Include="images\dnn\new.gif" />
+    <Content Include="images\dnn\re.gif" />
+    <Content Include="images\ext\ext_ace.gif" />
+    <Content Include="images\ext\ext_ai.gif" />
+    <Content Include="images\ext\ext_alz.gif" />
+    <Content Include="images\ext\ext_arj.gif" />
+    <Content Include="images\ext\ext_asa.gif" />
+    <Content Include="images\ext\ext_asax.gif" />
+    <Content Include="images\ext\ext_ascx.gif" />
+    <Content Include="images\ext\ext_asf.gif" />
+    <Content Include="images\ext\ext_asmx.gif" />
+    <Content Include="images\ext\ext_asp.gif" />
+    <Content Include="images\ext\ext_aspx.gif" />
+    <Content Include="images\ext\ext_asx.gif" />
+    <Content Include="images\ext\ext_au.gif" />
+    <Content Include="images\ext\ext_avi.gif" />
+    <Content Include="images\ext\ext_bat.gif" />
+    <Content Include="images\ext\ext_bmp.gif" />
+    <Content Include="images\ext\ext_c.gif" />
+    <Content Include="images\ext\ext_cab.gif" />
+    <Content Include="images\ext\ext_chm.gif" />
+    <Content Include="images\ext\ext_com.gif" />
+    <Content Include="images\ext\ext_config.gif" />
+    <Content Include="images\ext\ext_cpp.gif" />
+    <Content Include="images\ext\ext_cs.gif" />
+    <Content Include="images\ext\ext_csproj.gif" />
+    <Content Include="images\ext\ext_css.gif" />
+    <Content Include="images\ext\ext_css_old.gif" />
+    <Content Include="images\ext\ext_csv.gif" />
+    <Content Include="images\ext\ext_disco.gif" />
+    <Content Include="images\ext\ext_dll.gif" />
+    <Content Include="images\ext\ext_doc.gif" />
+    <Content Include="images\ext\ext_doc_.gif" />
+    <Content Include="images\ext\ext_eml.gif" />
+    <Content Include="images\ext\ext_exe.gif" />
+    <Content Include="images\ext\ext_exe_.gif" />
+    <Content Include="images\ext\ext_gif.gif" />
+    <Content Include="images\ext\ext_gz.gif" />
+    <Content Include="images\ext\ext_h.gif" />
+    <Content Include="images\ext\ext_hlp.gif" />
+    <Content Include="images\ext\ext_htm.gif" />
+    <Content Include="images\ext\ext_html.gif" />
+    <Content Include="images\ext\ext_hwp.gif" />
+    <Content Include="images\ext\ext_hwp_.gif" />
+    <Content Include="images\ext\ext_hwt.gif" />
+    <Content Include="images\ext\ext_inc.gif" />
+    <Content Include="images\ext\ext_ini.gif" />
+    <Content Include="images\ext\ext_jpeg.gif" />
+    <Content Include="images\ext\ext_jpg.gif" />
+    <Content Include="images\ext\ext_js.gif" />
+    <Content Include="images\ext\ext_lzh.gif" />
+    <Content Include="images\ext\ext_m3u.gif" />
+    <Content Include="images\ext\ext_max.gif" />
+    <Content Include="images\ext\ext_mdb.gif" />
+    <Content Include="images\ext\ext_mid.gif" />
+    <Content Include="images\ext\ext_mov.gif" />
+    <Content Include="images\ext\ext_mp2.gif" />
+    <Content Include="images\ext\ext_mp3.gif" />
+    <Content Include="images\ext\ext_mpe.gif" />
+    <Content Include="images\ext\ext_mpeg.gif" />
+    <Content Include="images\ext\ext_mpg.gif" />
+    <Content Include="images\ext\ext_none.gif" />
+    <Content Include="images\ext\ext_pcx.gif" />
+    <Content Include="images\ext\ext_pdb.gif" />
+    <Content Include="images\ext\ext_pdf.gif" />
+    <Content Include="images\ext\ext_pdf_.gif" />
+    <Content Include="images\ext\ext_pdf__.gif" />
+    <Content Include="images\ext\ext_pls.gif" />
+    <Content Include="images\ext\ext_png.gif" />
+    <Content Include="images\ext\ext_ppt.gif" />
+    <Content Include="images\ext\ext_ppt_.gif" />
+    <Content Include="images\ext\ext_psd.gif" />
+    <Content Include="images\ext\ext_ra.gif" />
+    <Content Include="images\ext\ext_ram.gif" />
+    <Content Include="images\ext\ext_rar.gif" />
+    <Content Include="images\ext\ext_rar_.gif" />
+    <Content Include="images\ext\ext_ra_.gif" />
+    <Content Include="images\ext\ext_reg.gif" />
+    <Content Include="images\ext\ext_resx.gif" />
+    <Content Include="images\ext\ext_rm.gif" />
+    <Content Include="images\ext\ext_rmi.gif" />
+    <Content Include="images\ext\ext_rtf.gif" />
+    <Content Include="images\ext\ext_sql.gif" />
+    <Content Include="images\ext\ext_sql_old.gif" />
+    <Content Include="images\ext\ext_swf.gif" />
+    <Content Include="images\ext\ext_swf_.gif" />
+    <Content Include="images\ext\ext_sys.gif" />
+    <Content Include="images\ext\ext_tar.gif" />
+    <Content Include="images\ext\ext_tga.gif" />
+    <Content Include="images\ext\ext_tif.gif" />
+    <Content Include="images\ext\ext_ttf.gif" />
+    <Content Include="images\ext\ext_txt.gif" />
+    <Content Include="images\ext\ext_txt_old.gif" />
+    <Content Include="images\ext\ext_unknown.gif" />
+    <Content Include="images\ext\ext_unknown_.gif" />
+    <Content Include="images\ext\ext_vb.gif" />
+    <Content Include="images\ext\ext_vbs.gif" />
+    <Content Include="images\ext\ext_vb_old.gif" />
+    <Content Include="images\ext\ext_vsdisco.gif" />
+    <Content Include="images\ext\ext_wav.gif" />
+    <Content Include="images\ext\ext_wax.gif" />
+    <Content Include="images\ext\ext_webinfo.gif" />
+    <Content Include="images\ext\ext_wma.gif" />
+    <Content Include="images\ext\ext_wmv.gif" />
+    <Content Include="images\ext\ext_wmx.gif" />
+    <Content Include="images\ext\ext_wri.gif" />
+    <Content Include="images\ext\ext_wvx.gif" />
+    <Content Include="images\ext\ext_xaml.gif" />
+    <Content Include="images\ext\ext_xls.gif" />
+    <Content Include="images\ext\ext_xls_.gif" />
+    <Content Include="images\ext\ext_xml.gif" />
+    <Content Include="images\ext\ext_xml_.gif" />
+    <Content Include="images\ext\ext_zip.gif" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -169,12 +316,68 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Board\BoardDelete.aspx.cs">
+      <DependentUpon>BoardDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Board\BoardDelete.aspx.designer.cs">
+      <DependentUpon>BoardDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Board\BoardDown.aspx.cs">
+      <DependentUpon>BoardDown.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Board\BoardDown.aspx.designer.cs">
+      <DependentUpon>BoardDown.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Board\BoardList.aspx.cs">
+      <DependentUpon>BoardList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Board\BoardList.aspx.designer.cs">
+      <DependentUpon>BoardList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Board\BoardView.aspx.cs">
+      <DependentUpon>BoardView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Board\BoardView.aspx.designer.cs">
+      <DependentUpon>BoardView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Board\BoardWrite.aspx.cs">
+      <DependentUpon>BoardWrite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Board\BoardWrite.aspx.designer.cs">
+      <DependentUpon>BoardWrite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Board\ImageText.aspx.cs">
+      <DependentUpon>ImageText.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Board\ImageText.aspx.designer.cs">
+      <DependentUpon>ImageText.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PagingControl.ascx.cs">
+      <DependentUpon>PagingControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\PagingControl.ascx.designer.cs">
+      <DependentUpon>PagingControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchControl.ascx.cs">
+      <DependentUpon>SearchControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchControl.ascx.designer.cs">
+      <DependentUpon>SearchControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -186,6 +389,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BoardWriteFormType.cs" />
+    <Compile Include="Models\Note.cs" />
+    <Compile Include="Models\NoteComment.cs" />
+    <Compile Include="Models\NoteRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -211,6 +418,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Files\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -259,7 +467,9 @@
       <ErrorText>이 프로젝트는 이 컴퓨터에 없는 NuGet 패키지를 참조합니다. 해당 패키지를 다운로드하려면 NuGet 패키지 복원을 사용하십시오. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=322105를 참조하십시오. 누락된 파일은 {0}입니다.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
   </Target>
+  <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
