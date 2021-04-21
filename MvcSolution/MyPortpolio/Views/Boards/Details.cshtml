@@ -1,0 +1,62 @@
+﻿@model MyPortpolio.Models.Board
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<div class="container">
+    <div class="col-lg col-md ml-auto mr-auto">
+        <div class="card card-login">
+            <div class="section section-boards">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h3 class="text-center card-title">Board</h3>
+                        <form class="contact-form">
+                            <div>
+                                <dl class="row">
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.Subject)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.Subject)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.Writer)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.Writer)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.Contents)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.Contents)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.RegDate)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.RegDate)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.ReadCount)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.ReadCount)
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div>
+                                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.Idx">Edit</a> |
+                                <a class="btn btn-primary" asp-action="Index">to List</a>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

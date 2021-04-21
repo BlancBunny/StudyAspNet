@@ -1,0 +1,74 @@
+﻿@model MyPortpolio.Models.Contact
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<div class="container">
+    <div class="col-lg-12 col-md-12 ml-auto mr-auto">
+        <div class="card card-login">
+            <form class="form" asp-action="Index">
+                <div class="card-header card-header-primary text-center">
+                    <h4 class="card-title">Contact</h4>
+                </div>
+                <p class="description text-center">문의내용 입력</p>
+                <div class="card-body">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="material-icons">badge</i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control" asp-for="Name" placeholder="이름...">
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="material-icons">title</i>
+                                    </span>
+                                </div>
+                                <input type="email" class="form-control" asp-for="Email" placeholder="이메일...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-12">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="material-icons">toc</i>
+                                    </span>
+                                </div>
+                                <textarea class="form-control" asp-for="Contents" placeholder="내용을 입력하세요..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <button type="submit" class="btn btn-primary btn-raised">전송</button>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col">
+                            @if (ViewBag.Message != null)
+                            {
+                                <span>@ViewBag.Message</span>
+                            }
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="footer text-center">
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

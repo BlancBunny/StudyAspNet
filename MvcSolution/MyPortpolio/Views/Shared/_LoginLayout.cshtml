@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+@await Html.PartialAsync("HeadPage")
+
+<body class="login-page sidebar-collapse">
+    @await Html.PartialAsync("NavPage")
+    <div class="page-header header-filter" style="background-image: url('../assets/img/bg7.jpg'); background-size: cover; background-position: top center;">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        @await Html.PartialAsync("FooterPage")
+    </div>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

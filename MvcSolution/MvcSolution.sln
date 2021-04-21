@@ -9,7 +9,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbWebApp", "DbWebApp\DbWebA
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MvcWebApp.Database", "MvcWebApp.Database\MvcWebApp.Database.sqlproj", "{8AF68495-1B34-4103-9178-F18FDC48FAEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListWebApp", "ToDoListWebApp\ToDoListWebApp.csproj", "{172176A8-60CB-4E26-8CE4-2467FBAC635D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoListWebApp", "ToDoListWebApp\ToDoListWebApp.csproj", "{172176A8-60CB-4E26-8CE4-2467FBAC635D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestApiTestApp", "RestApiTestApp\RestApiTestApp.csproj", "{00509F2E-FDA2-44FD-9C49-C553E9D297AE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyPortpolio", "MyPortpolio\MyPortpolio.csproj", "{37C09D8B-1193-4162-85ED-2AEBF70972DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{66444781-96B5-4078-A725-90F8AD6FFE2C}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +44,14 @@ Global
 		{172176A8-60CB-4E26-8CE4-2467FBAC635D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{172176A8-60CB-4E26-8CE4-2467FBAC635D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{172176A8-60CB-4E26-8CE4-2467FBAC635D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00509F2E-FDA2-44FD-9C49-C553E9D297AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00509F2E-FDA2-44FD-9C49-C553E9D297AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00509F2E-FDA2-44FD-9C49-C553E9D297AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00509F2E-FDA2-44FD-9C49-C553E9D297AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37C09D8B-1193-4162-85ED-2AEBF70972DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37C09D8B-1193-4162-85ED-2AEBF70972DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37C09D8B-1193-4162-85ED-2AEBF70972DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37C09D8B-1193-4162-85ED-2AEBF70972DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
