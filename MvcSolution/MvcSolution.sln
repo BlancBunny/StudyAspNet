@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicMvcWebApp", "BasicMvcW
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbWebApp", "DbWebApp\DbWebApp.csproj", "{0CC169E9-9C55-4DDB-887D-1273B52B2E83}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MvcWebApp.Database", "MvcWebApp.Database\MvcWebApp.Database.sqlproj", "{8AF68495-1B34-4103-9178-F18FDC48FAEC}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoListWebApp", "ToDoListWebApp\ToDoListWebApp.csproj", "{172176A8-60CB-4E26-8CE4-2467FBAC635D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestApiTestApp", "RestApiTestApp\RestApiTestApp.csproj", "{00509F2E-FDA2-44FD-9C49-C553E9D297AE}"
@@ -19,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MvcWebApp.Database", "MvcWebApp.Database2\MvcWebApp.Database.sqlproj", "{D3344EBB-2202-4058-800D-85907B06F3B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,12 +34,6 @@ Global
 		{0CC169E9-9C55-4DDB-887D-1273B52B2E83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CC169E9-9C55-4DDB-887D-1273B52B2E83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CC169E9-9C55-4DDB-887D-1273B52B2E83}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8AF68495-1B34-4103-9178-F18FDC48FAEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8AF68495-1B34-4103-9178-F18FDC48FAEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8AF68495-1B34-4103-9178-F18FDC48FAEC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{8AF68495-1B34-4103-9178-F18FDC48FAEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8AF68495-1B34-4103-9178-F18FDC48FAEC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8AF68495-1B34-4103-9178-F18FDC48FAEC}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{172176A8-60CB-4E26-8CE4-2467FBAC635D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{172176A8-60CB-4E26-8CE4-2467FBAC635D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{172176A8-60CB-4E26-8CE4-2467FBAC635D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -52,6 +46,12 @@ Global
 		{37C09D8B-1193-4162-85ED-2AEBF70972DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37C09D8B-1193-4162-85ED-2AEBF70972DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37C09D8B-1193-4162-85ED-2AEBF70972DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3344EBB-2202-4058-800D-85907B06F3B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3344EBB-2202-4058-800D-85907B06F3B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3344EBB-2202-4058-800D-85907B06F3B4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D3344EBB-2202-4058-800D-85907B06F3B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3344EBB-2202-4058-800D-85907B06F3B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3344EBB-2202-4058-800D-85907B06F3B4}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

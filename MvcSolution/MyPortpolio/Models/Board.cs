@@ -24,7 +24,9 @@ namespace MyPortpolio.Models
         [DataType(DataType.Text)]
         public string Contents { get; set; }
 
+        [DataType(DataType.DateTime)]
         public DateTime RegDate { get; set; }
+
         public int ReadCount { get; set; }
     }
 }

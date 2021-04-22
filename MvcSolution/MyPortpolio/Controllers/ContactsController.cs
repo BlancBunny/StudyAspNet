@@ -21,7 +21,7 @@ namespace MyPortpolio.Controllers
 
         [HttpGet]
         // GET: Contacts
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             return View();
         }

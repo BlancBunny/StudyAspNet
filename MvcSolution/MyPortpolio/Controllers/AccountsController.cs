@@ -21,14 +21,14 @@ namespace MyPortpolio.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Login()
+        public IActionResult Login()
         {
              var account = new Account();
              return View(account);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login([Bind("Email, Password")] Account account)
+        public IActionResult Login([Bind("Email, Password")] Account account)
         {
             if (ModelState.IsValid)
             {
@@ -44,7 +44,7 @@ namespace MyPortpolio.Controllers
                 }
                 return RedirectToAction("Index", "Home");
             }
-            return null;
+            return View("Login");
         }
 
         public IActionResult Logout()

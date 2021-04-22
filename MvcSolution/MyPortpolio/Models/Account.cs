@@ -11,10 +11,15 @@ namespace MyPortpolio.Models
         [Key]
         public int Idx { get; set; }
 
+        [DataType(DataType.Text)]
+
         public string Name { get; set; }
-        [Required]
+
+        [Required(ErrorMessage ="이메일은 필수입니다.")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-        [Required]
+        [Required(ErrorMessage = "패스워드는 필수입니다.")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         public char Grade { get; set; }
